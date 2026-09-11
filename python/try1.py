@@ -1,4 +1,6 @@
 import requests
+import logging
+logging.basicConfig(filename='app.log')
 url="https://jsonplaceholder.typicode.com/todos/14374172"
 try:
     response = requests.get(url)
@@ -7,4 +9,4 @@ try:
     print(data)
 except:
     requests.exceptions.RequestException
-    print("网络请求失败，请检查 URL")
+    logging.error("网络请求失败，请检查 URL")
