@@ -8,3 +8,5 @@ def twoSum(numbers:list[int],target:int):
             left+=1
     return [left+1,right+1]
 print(twoSum([2,4,7,8],9))
+#时间复杂度：O(n)
+#空间复杂度：O(1)

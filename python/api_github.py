@@ -1,5 +1,6 @@
 import requests
 import logging
+import json
 url="https://api.github.com/users/torvalds"
 logging.basicConfig(
     filename="log.log",
@@ -16,5 +17,7 @@ try:
             "公开仓库数量":a_dict["public_repos"]
         }
         logging.info(f"获取用户信息:{b_dict}")
+    with open("data.json","w",encoding="utf-8")as f:
+        json.dump(b_dict,f,ensure_ascii=False,indent=4)
 except requests.exceptions.RequestException:
     logging.error("网络请求失败，请检查 URL")
