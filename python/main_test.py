@@ -12,3 +12,6 @@ def get_user(user_id:int):
         return {"user_id":2,"name":"李四"}
     else:
         return {"user_id":user_id,"name":"未命名"}
+@app.get("/search")
+def search_item(keyword:str,page:int=1):
+    return {"搜索词":keyword,"页码":page}
